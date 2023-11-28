@@ -1,8 +1,9 @@
 const app= require('./app');
 const dotenv=require('dotenv');
 const path=require('path');
+const cors = require('cors');
 const connectDatabase = require('./config/database');
-
+app.use(cors({origin:"*"}));
 dotenv.config({path:path.join(__dirname,'config/config.env')});
 
 connectDatabase();
